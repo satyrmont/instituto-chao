@@ -14,6 +14,8 @@ const Section = styled.section`
   z-index: 1;
 
   @media (min-width: 768px) {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     height: calc(100dvh - var(--nav-height));
     scroll-margin-top: var(--nav-height);
     flex-direction: column;

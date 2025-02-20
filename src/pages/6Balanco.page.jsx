@@ -172,10 +172,10 @@ const BalancoSection = styled(Section)`
   h2 {
     font-family: var(--title-font);
     font-weight: var(--title-font-weight);
-    font-weight: 500;
+    /* font-weight: 500; */
   }
   h1 {
-    font-size: clamp(42px, 5svw, 80px);
+    font-size: clamp(42px, 50px, 80px);
   }
 
   h2 {
@@ -188,10 +188,10 @@ const BalancoSection = styled(Section)`
   }
 
   @media (min-width: 768px) {
-    font-size: clamp(16px, 3svh, 22px);
+    font-size: clamp(16px, 2svh, 22px);
 
     h1 {
-      font-size: clamp(42px, 5svw, 80px);
+      font-size: clamp(60px, 5svw, 80px);
     }
 
     h2 {
@@ -199,7 +199,7 @@ const BalancoSection = styled(Section)`
     }
 
     h3 {
-      font-size: clamp(22px, 2.8svw, 32px);
+      font-size: clamp(22px, 4svw, 38px);
     }
   }
 `;
