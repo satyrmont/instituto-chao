@@ -17,14 +17,17 @@ const GlobalStyle = createGlobalStyle`
 }
 
     html{
-        scroll-snap-type: y proximity;
+        scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
         
         &::-webkit-scrollbar {
             width: 0;
             height: 0;
             background: transparent;
-}
+        }@media (min-width: 768px) {
+            
+            scroll-snap-type: y proximity;
+  }
 
     }
 
