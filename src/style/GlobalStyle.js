@@ -18,13 +18,16 @@ const GlobalStyle = createGlobalStyle`
 
     html{
         scroll-snap-type: y mandatory;
-        scroll-behavior: smooth;
-        
+        scroll-snap-stop: always;
         &::-webkit-scrollbar {
             width: 0;
             height: 0;
             background: transparent;
-        }@media (min-width: 768px) {
+        }
+        
+        @media (min-width: 768px) {
+            scroll-snap-stop: normal;
+            scroll-behavior: smooth;
             
             scroll-snap-type: y proximity;
   }
