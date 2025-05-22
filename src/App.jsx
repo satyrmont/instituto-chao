@@ -9,6 +9,7 @@ import Contribuicao from "./pages/3ContribuicaoInfo.page.jsx";
 import Historico from "./pages/5Historico.jsx.jsx";
 import Balanco from "./pages/6Balanco.page.jsx";
 import Contato from "./pages/7Contato.page.jsx";
+import Mapa from "./pages/4Mapa.page.jsx";
 
 import { MobileProvider } from "./context/mobileContext.jsx";
 
@@ -22,6 +23,7 @@ function App() {
         <ComoFunciona />
         <Contribuicao />
         <Buscamos />
+        <Mapa />
         <Historico />
         <Balanco />
         <Contato />
