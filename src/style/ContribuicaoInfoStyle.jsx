@@ -40,7 +40,7 @@ export const ContribuicaoContainer = styled(ContentContainer)`
     /* padding: 50px 0px; */
   }
 
-  background-color: #d3d3d330;
+  /* background-color: #d3d3d330; */
 `;
 
 export const ContribuicaoColLeft = styled.div`
