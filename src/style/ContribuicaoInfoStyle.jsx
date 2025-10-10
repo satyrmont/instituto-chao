@@ -80,7 +80,8 @@ export const ContribuicaoColRight = styled.div`
 export const Line = styled.div`
   width: 96dvw;
   @media (min-width: 768px) {
-    width: 100%;
+    width: 98%;
+    margin-right: 50px;
   }
   /* background-color: #3d70cf6b; */
 `;
@@ -89,10 +90,10 @@ export const LineVert = styled.div`
   display: flex;
   flex-direction: column;
   width: 96dvw;
-  /* background-color: #3d70cf6b; */
   @media (min-width: 768px) {
     width: 100%;
   }
+  /* background-color: #3d70cf6b; */
 `;
 
 export const LineVertManutencao = styled.div`
@@ -117,12 +118,13 @@ export const LineContent = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: end;
-  font-size: clamp(26px, 3dvw, 40px);
+  /* font-size: clamp(26px, 3dvw, 40px); */
 
   font-weight: 400;
 
   @media (min-width: 768px) {
-    font-size: clamp(46px, 46px, 50px);
+    /* width: 60dvw; */
+    /* font-size: clamp(42px, 42px, 50px); */
     font-weight: 400;
   }
 
@@ -188,19 +190,22 @@ export const LineInfoArrecadacao = styled.span`
   font-family: "Hanken Grotesk", sans-serif;
   font-weight: 400;
   line-height: 0.8;
-  font-size: clamp(12px, 14px, 16px);
+  font-size: clamp(12px, 2dvw, 24px);
+  /* font-size: clamp(12px, 14px, 16px); */
   letter-spacing: 0.05em;
   font-weight: 600;
   margin-right: 4px;
-  width: 40%;
+  width: 50%;
   max-width: 200px;
   text-align: end;
   /* background-color: #deb8877b; */
 
   @media (min-width: 768px) {
-    font-size: clamp(12px, 0.8dvw, 16px);
+    font-size: clamp(12px, 20px, 24px);
+    /* font-size: clamp(12px, 2dvw, 24px); */
+    /* font-size: clamp(12px, 0.8dvw, 16px); */
     text-align: end;
-    max-width: 35%;
+    max-width: 45%;
     margin: 5px 0.6dvw;
   }
 `;
@@ -238,7 +243,7 @@ export const LineContentRight = styled.div`
 `;
 
 export const IconWrapper = styled(Icon)`
-  font-size: clamp(50px, 5dvw, 100px);
+  font-size: clamp(30px, 50px, 100px);
   margin: 3dvh 0;
 `;
 
