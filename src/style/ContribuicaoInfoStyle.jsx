@@ -31,12 +31,16 @@ export const ContribuicaoContainer = styled(ContentContainer)`
   width: 96dvw;
 
   @media (min-width: 768px) {
-    max-width: 96dvw;
+    /* max-width: 96dvw; */
+    /* max-height: 20dvh; */
+    /* height: 10dvh; */
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    /* padding: 50px 0px; */
   }
 
-  /* background-color: #d3d3d330; */
+  background-color: #d3d3d330;
 `;
 
 export const ContribuicaoColLeft = styled.div`
@@ -47,8 +51,10 @@ export const ContribuicaoColLeft = styled.div`
 
   @media (min-width: 768px) {
     /* height: 50dvh; */
+    /* padding: 12px 0px */
     align-items: start;
-    margin-right: 2dvw;
+    justify-content: start;
+    /* margin-right: 2dvw; */
   }
 
   /* background-color: #f080806b; */
@@ -59,13 +65,13 @@ export const ContribuicaoColRight = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
 
   @media (min-width: 768px) {
     justify-content: center;
     align-items: center;
-    width: 40dvw;
-    height: 50dvh;
+    /* width: 40dvw; */
+    /* height: 50dvh; */
   }
 
   /* background-color: lightgreen; */
@@ -116,7 +122,7 @@ export const LineContent = styled.div`
   font-weight: 400;
 
   @media (min-width: 768px) {
-    font-size: clamp(46px, 4dvw, 50px);
+    font-size: clamp(46px, 46px, 50px);
     font-weight: 400;
   }
 
@@ -140,7 +146,7 @@ export const LineInfoBold = styled.span`
   line-height: 0.8;
   font-size: clamp(40px, 5dvw, 90px);
   @media (min-width: 768px) {
-    font-size: clamp(50px, 5dvw, 90px);
+    font-size: clamp(50px, 80px, 90px);
   }
   /* background-color: blanchedalmond; */
 `;
@@ -161,7 +167,7 @@ export const LineInfoBoldRight = styled.span`
   /* background-color: blanchedalmond; */
 
   @media (min-width: 768px) {
-    font-size: clamp(12px, 1.5dvw, 24px);
+    font-size: clamp(12px, 20px, 24px);
     flex-direction: column;
     justify-content: start;
     text-align: start;
@@ -174,7 +180,7 @@ export const LineInfoPercentage = styled.span`
   line-height: 0.8;
 
   @media (min-width: 768px) {
-    font-size: clamp(100px, 10dvw, 140px);
+    font-size: clamp(100px, 130px, 140px);
   }
 `;
 
@@ -182,7 +188,7 @@ export const LineInfoArrecadacao = styled.span`
   font-family: "Hanken Grotesk", sans-serif;
   font-weight: 400;
   line-height: 0.8;
-  font-size: clamp(11px, 0.8dvw, 16px);
+  font-size: clamp(12px, 14px, 16px);
   letter-spacing: 0.05em;
   font-weight: 600;
   margin-right: 4px;

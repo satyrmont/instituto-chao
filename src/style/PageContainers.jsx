@@ -38,7 +38,7 @@ const ContentContainer = styled.div`
   @media (min-width: 768px) {
     width: clamp(70dvw, 80dvw, 85dvw);
     /* width: 70dvw; */
-    padding: 4dvh 2dvw;
+    /* padding: 4dvh 2dvw; */
   }
 `;
 
