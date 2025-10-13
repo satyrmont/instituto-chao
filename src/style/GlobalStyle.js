@@ -28,15 +28,15 @@ const GlobalStyle = createGlobalStyle`
         @media (min-width: 768px) {
             scroll-snap-stop: normal;
             scroll-behavior: smooth;
-            
-            scroll-snap-type: y proximity;
+            scroll-snap-type: y mandatory;
   }
 
     }
 
     :root {
 
-    --nav-height: 5dvh;
+    --nav-height: clamp(30px, 5dvh, 50px);
+    --nav-font-size: clamp(22px, 5dvh, 36px);
 
     --color-gray: #ded6d0;
     /* --text-font-size: clamp(24px, 1.5dvw, 50px); */
@@ -46,7 +46,17 @@ const GlobalStyle = createGlobalStyle`
     --scroll-bar-width: 6px;
     --scroll-bar-width-large: 8px;
     
+    --breakpoint-contribuicao: 1200px;
+    --contribuicao-titulos-small-screen: clamp(28px, 30px, 50px);
+    --contribuicao-titulos-big-screen: clamp(32px, 3dvw, 52px);
     
+    --contribuicao-numeros-small-screen: clamp(30px, 36px, 48px);
+    --contribuicao-numeros-big-screen: clamp(60px, 9dvw, 100px);
+    
+    --contribuicao-texto-big-screen: clamp(12px, 20px, 24px);
+    --contribuicao-texto-small-screen: clamp(12px, 20px, 24px);
+    
+    --contribuicao-icon-size: clamp(30px,50px,100px);
     
     --color-yellow: #e5d26a;
     --color-brown: #a58b74;

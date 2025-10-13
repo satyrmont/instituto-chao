@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 
-import { MobileContext } from "../context/mobileContext";
 import {
   ContribuicaoSection,
   ContribuicaoContainer,
@@ -11,31 +10,35 @@ import {
   LineVertManutencao,
   LineRect,
   LineContent,
-  ContribuicaoSugerida,
-  LineInfoBold,
-  LineInfoBoldRight,
-  LineInfoPercentage,
-  LineInfoArrecadacao,
-  LineContentLeft,
-  LineContentRight,
+  LineInfo,
+  Number,
+  LineTitle,
   IconWrapper,
 } from "../style/ContribuicaoInfoStyle.jsx";
 
 function Contribuicao() {
-  const isMobile = useContext(MobileContext);
+  const [isWide, setIsWide] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => setIsWide(window.innerWidth > 1200);
+    checkWidth(); // run on mount
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
+
   return (
     <ContribuicaoSection id="contribuicao">
       <ContribuicaoContainer>
         <ContribuicaoColLeft>
           <Line>
             <LineContent>
-              <LineContentLeft>
+              <LineTitle>
                 <span>TOTAL DE CUSTOS</span>
-              </LineContentLeft>
-              <LineContentRight>
-                <span>R$</span>
-                <LineInfoBold>680.900</LineInfoBold>
-              </LineContentRight>
+              </LineTitle>
+              <Number>
+                <span class="reais">R$</span>
+                <span class="number">680.900</span>
+              </Number>
             </LineContent>
             <LineRect />
           </Line>
@@ -43,50 +46,65 @@ function Contribuicao() {
 
           <Line>
             <LineContent>
-              <LineContentLeft>
-                <span>PREVISÃO DE VENDAS DE PRODUTOS</span>
-              </LineContentLeft>
-              <LineContentRight>
-                <span>R$</span>
-                <LineInfoBold>680.900</LineInfoBold>
-              </LineContentRight>
+              <LineTitle>
+                <span>
+                  PREVISÃO DE <br /> VENDAS DE
+                  <br /> PRODUTOS
+                </span>
+              </LineTitle>
+              <Number>
+                <span class="reais">R$</span>
+                <span class="number">2.725.500</span>
+              </Number>
             </LineContent>
             <LineRect />
           </Line>
           <IconWrapper icon="pepicons-pop:equal-circle" />
 
-          {isMobile ? (
+          {!isWide ? (
             <Line>
               <LineContent>
-                <LineContentLeft>
-                  <span>NECESSIDADE MÍNIMA DE ARRECADAÇÃO</span>
-                </LineContentLeft>
-                <LineContentRight className="vert">
-                  <LineInfoPercentage>25%</LineInfoPercentage>
-                </LineContentRight>
+                <LineTitle>
+                  <span>
+                    NECESSIDADE <br />
+                    MÍNIMA DE <br />
+                    ARRECADAÇÃO
+                  </span>
+                </LineTitle>
+                <Number className="vert">
+                  <span class="percentage25">25%</span>
+                </Number>
               </LineContent>
               <LineRect />
               <LineVertManutencao>
-                <LineInfoArrecadacao>
-                  Arrecadações para custos do espaço e nosso trabalho
-                </LineInfoArrecadacao>
+                <LineInfo>
+                  <div>
+                    Arrecadações para custos <br /> do espaço e nosso trabalho
+                  </div>
+                </LineInfo>
               </LineVertManutencao>
             </Line>
           ) : (
             <Line>
               <LineContent>
-                <LineContentLeft>
-                  <span>NECESSIDADE MÍNIMA DE ARRECADAÇÃO</span>
-                </LineContentLeft>
-                <LineContentRight className="porcentagemContribuicao">
-                  <LineInfoArrecadacao>
-                    <span>
-                      De arrecadações para pagar os custos do espaço e do nosso
-                      trabalho
+                <LineTitle>
+                  <span>
+                    NECESSIDADE <br />
+                    MÍNIMA DE
+                    <br /> ARRECADAÇÃO
+                  </span>
+                </LineTitle>
+                <Number>
+                  <LineInfo>
+                    <span class="arrecadacoes">
+                      De arrecadações
+                      <br /> para pagar os custos <br />
+                      do espaço e do
+                      <br /> nosso trabalho
                     </span>
-                  </LineInfoArrecadacao>
-                  <LineInfoPercentage>25%</LineInfoPercentage>
-                </LineContentRight>
+                  </LineInfo>
+                  <span class="percentage25">25%</span>
+                </Number>
               </LineContent>
               <LineRect />
             </Line>
@@ -94,23 +112,43 @@ function Contribuicao() {
         </ContribuicaoColLeft>
         <ContribuicaoColRight>
           <LineVert>
-            <ContribuicaoSugerida>
-              <LineContentLeft>
-                CONTRIBUIÇÃO
-                <br />
-                SUGERIDA
-              </LineContentLeft>
-              <LineInfoPercentage>30%</LineInfoPercentage>
-            </ContribuicaoSugerida>
+            {!isWide ? (
+              <div class="contribuicaoSugerida">
+                <LineTitle style={{ textAlign: "end" }}>
+                  CONTRIBUIÇÃO
+                  <br />
+                  SUGERIDA
+                </LineTitle>
+                <Number>
+                  <span class="percentage30">30%</span>
+                </Number>
+              </div>
+            ) : (
+              <div>
+                <LineTitle>
+                  <div class="contribuicaoSugerida">
+                    CONTRIBUIÇÃO
+                    <br />
+                    SUGERIDA
+                  </div>
+                </LineTitle>
+                <Number>
+                  <span class="percentage">30%</span>
+                </Number>
+              </div>
+            )}
             <LineRect />
             <LineVertManutencao>
-              <span>OU MAIS</span>
-              <LineInfoBoldRight>
-                <span>Para manutencão e ampliacão</span>
-                <span>(equilibra as contas e possibilita</span>
-                <span>investir no projeto)</span>
-              </LineInfoBoldRight>
+              <span class="ouMais">OU MAIS</span>
+              <LineInfo>
+                <span>
+                  Para manutencão e ampliacão <br />
+                  (equilibra as contas e possibilita <br />
+                  investir no projeto)
+                </span>
+              </LineInfo>
             </LineVertManutencao>
+            <LineRect />
           </LineVert>
         </ContribuicaoColRight>
       </ContribuicaoContainer>

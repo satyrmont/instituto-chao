@@ -156,7 +156,9 @@ const NavBar = styled.div`
   position: fixed;
   overflow-x: hidden;
   overflow-y: hidden;
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: var(--navbar-font-size);
+
   /* line-height: 20px; */
 
   top: 0px;

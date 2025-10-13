@@ -282,7 +282,9 @@ const HorizontalLine = styled.div`
   background-color: black;
   z-index: 3;
   height: 2px;
-
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
   @media (min-width: 768px) {
     height: 2px;
   }
