@@ -1,8 +1,6 @@
 import { styled } from "styled-components";
 
 const Section = styled.section`
-  height: 100dvh;
-
   scroll-snap-align: start;
   scroll-snap-stop: always;
   overflow: hidden;
@@ -13,10 +11,11 @@ const Section = styled.section`
   justify-content: center;
   z-index: 1;
 
+  height: 100dvh;
   @media (min-width: 768px) {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    height: calc(100dvh - var(--nav-height));
+    max-height: calc(100dvh - var(--nav-height));
     scroll-margin-top: var(--nav-height);
     flex-direction: column;
     align-items: center;
@@ -32,11 +31,12 @@ const ContentContainer = styled.div`
   justify-content: center;
   align-content: center;
   padding: 2dvh 0.5dvw;
+  height: 100%;
 
   /* background-color: #00ffff44; */
 
   @media (min-width: 768px) {
-    width: clamp(70dvw, 80dvw, 85dvw);
+    width: clamp(768px, 80dvw, 1920px);
     /* width: 70dvw; */
     /* padding: 4dvh 2dvw; */
   }
@@ -48,7 +48,7 @@ const SectionText = styled.div`
   white-space: break-spaces;
   word-wrap: break-word;
   /* height: 100%; */
-  max-height: 92dvh;
+  max-height: 96%;
   /* text-align: justify; */
 
   display: flex;
@@ -70,7 +70,7 @@ const SectionText = styled.div`
   }
 
   @media (min-width: 768px) {
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: clamp(18px, 2vw, 24px);
     /* line-height: 1.2em; */
     /* font-size: clamp(18px, 3vw, 32px); */
     padding: 0 1dvw;
@@ -106,7 +106,7 @@ const Title = styled.h1`
 
   @media (min-width: 768px) {
     white-space: normal;
-    font-size: clamp(120px, 10dvw, 200px);
+    font-size: clamp(100px, 20dvw, 150px);
     line-height: 0.8em;
     margin-top: 0;
     flex-direction: column;

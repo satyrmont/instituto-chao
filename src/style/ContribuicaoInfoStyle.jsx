@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Section, ContentContainer } from "./PageContainers";
 import { Icon } from "@iconify/react";
-import { ReactFitty } from "react-fitty";
 
 export const ContribuicaoSection = styled(Section)`
   box-shadow: 0px -10px 12px rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
@@ -13,11 +12,10 @@ export const ContribuicaoSection = styled(Section)`
   justify-content: start;
   background-color: var(--color-brown2);
 
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* height: 100dvh; */
   }
 
   color: white;
@@ -30,10 +28,10 @@ export const ContribuicaoContainer = styled(ContentContainer)`
   align-items: center;
   justify-content: space-around;
   /* height: 100dvh; */
-  width: 100dvw;
+  margin-top: 32px;
+  width: 94dvw;
 
-  @media (min-width: 1200px) {
-    /* width: 100%; */
+  @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -47,13 +45,12 @@ export const ContribuicaoColLeft = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  /* width: 100%; */
   /* max-width: 700px; */
   /* height: 100%; */
   /* margin-bottom: 30px; */
-  @media (min-width: 1200px) {
-    /* justify-content: space-around; */
-    width: 100%;
-    /* max-width: 60dvw; */
+  @media (min-width: 768px) {
+    width: 80%;
     align-items: start;
   }
 
@@ -69,14 +66,7 @@ export const ContribuicaoColRight = styled.div`
   justify-content: center;
   /* max-width: 50%; */
 
-  @media (min-width: 1200px) {
-    /* width: 30%; */
-    /* max-width: 400px; */
-    /* justify-content: center; */
-    /* align-items: center; */
-
-    /* width: 40dvw; */
-    /* height: 100dvh; */
+  @media (min-width: 768px) {
   }
 
   /* background-color: lightgreen; */
@@ -88,7 +78,7 @@ export const Line = styled.div`
 
   max-width: 800px;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     max-width: 100%;
     /* width: 100%; */
   }
@@ -97,21 +87,27 @@ export const Line = styled.div`
 
 export const LineVert = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   height: fit-content;
+  align-items: end;
 
+  /* background-color: #3d70cf6b; */
   .contribuicaoSugerida {
-    background-color: #3d70cf6b;
-    flex-direction: row;
+    /* width: 100%; */
+    /* height: 100%; */
+    /* flex-direction: row; */
+    /* align-items: end; */
+    /* justify-content: end; */
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     max-width: 300px;
     flex-direction: column;
     .contribuicaoSugerida {
-      background-color: #3d70cf6b;
+      /* background-color: #3d70cf6b; */
       flex-direction: row;
       width: 100%;
+      min-width: 300px;
     }
   }
 `;
@@ -119,32 +115,35 @@ export const LineVert = styled.div`
 export const LineVertManutencao = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: end;
 
   .ouMais {
     font-size: calc(2 * var(--contribuicao-texto-small-screen));
     width: 100%;
-    text-align: end;
+    text-align: start;
   }
 
   span {
     /* margin: 8px 0px; */
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     align-items: start;
 
     .ouMais {
       font-size: calc(2 * var(--contribuicao-texto-big-screen));
       /* margin: 8px 0px; */
       width: 100%;
+      align-items: start;
       text-align: start;
+      white-space: nowrap;
     }
   }
   /* background-color: #a14dbb6b; */
 `;
 
 export const LineRect = styled.div`
+  width: 100%;
   height: 2px;
   background-color: white;
   transform: translateZ(0);
@@ -158,19 +157,14 @@ export const LineContent = styled.div`
   justify-content: space-between;
   align-items: end;
   /* background-color: lightblue; */
-`;
+  .pagaOsCustos {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    /* justify-content: end; */
 
-export const ContribuicaoSugerida = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  @media (min-width: 1200px) {
-    align-items: start;
-    flex-direction: column;
+    /* width: 60%; */
   }
-  /* background-color: #3d70cf6b; */
 `;
 
 export const LineInfo = styled.span`
@@ -182,25 +176,28 @@ export const LineInfo = styled.span`
   justify-content: end;
   align-items: end;
   text-align: end;
+  white-space: nowrap;
+
   /* width: 100%; */
 
   /* background-color: #583a0d; */
 
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     align-items: start;
-    min-width: 300px;
     font-size: var(--contribuicao-texto-big-screen) !important;
-    flex-direction: column;
     justify-content: start;
     text-align: start;
-    /* width: 100dvw; */
-    max-width: 25%;
+    margin-bottom: 6px;
+    .arrecadacoes {
+      white-space: nowrap;
+    }
   }
 `;
 
 export const LineTitle = styled.div`
   display: flex;
   flex-direction: row;
+  white-space: nowrap;
   /* max-width: 40%; */
   /* justify-content: space-between; */
   align-items: start;
@@ -209,7 +206,7 @@ export const LineTitle = styled.div`
 
   /* background-color: #00003f2f; */
 
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     flex-direction: column;
     width: 100%;
     font-size: var(--contribuicao-titulos-big-screen);
@@ -224,7 +221,7 @@ export const Number = styled.div`
   /* height: 100%; */
 
   font-size: var(--contribuicao-numeros-small-screen);
-  /* height: 10px; */
+
   .number {
     line-height: 0.8;
   }
@@ -233,18 +230,19 @@ export const Number = styled.div`
     overflow: visible;
   }
 
-  .percentage25 {
+  .percentage {
     line-height: 0.8;
-    font-size: calc(2.8 * var(--contribuicao-numeros-small-screen));
-  }
-  /* background-color: darkgoldenrod; */
-  .percentage30 {
-    line-height: 0.8;
-    font-size: calc(3 * var(--contribuicao-numeros-small-screen));
+    font-size: calc(2 * var(--contribuicao-numeros-small-screen));
+    /* background-color: darkgoldenrod; */
   }
   /* background-color: darkgoldenrod; */
 
-  @media (min-width: 1200px) {
+  .percentageDesktop {
+    line-height: 0.8;
+    font-size: calc(1.6 * var(--contribuicao-numeros-big-screen));
+  }
+
+  @media (min-width: 768px) {
     font-size: var(--contribuicao-numeros-big-screen);
     justify-content: end;
     .number {
@@ -260,18 +258,24 @@ export const Number = styled.div`
       line-height: 0.8;
       font-size: calc(1.6 * var(--contribuicao-numeros-big-screen));
     }
+    .percentageDesktop {
+      align-items: start;
+      text-align: start;
+      width: 100%;
+      line-height: 0.8;
+      font-size: calc(1.6 * var(--contribuicao-numeros-big-screen));
+    }
   }
   /* background-color: #00800067; */
 `;
 
 export const IconWrapper = styled(Icon)`
-  /* font-size: calc(0.8 * var(--contribuicao-icon-size)); */
-  font-size: var(--contribuicao-icon-size);
+  font-size: var(--contribuicao-icon-size-small);
   margin: 2dvh 0;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 768px) {
     margin: 3dvh 0;
-    font-size: calc(1.4 * var(--contribuicao-icon-size));
+    font-size: var(--contribuicao-icon-size-big);
   }
 `;
 
@@ -285,7 +289,6 @@ export default {
   LineVertManutencao,
   LineRect,
   LineContent,
-  ContribuicaoSugerida,
   LineInfo,
   LineTitle,
   Number,

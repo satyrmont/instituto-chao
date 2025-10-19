@@ -20,7 +20,7 @@ function Contribuicao() {
   const [isWide, setIsWide] = useState(false);
 
   useEffect(() => {
-    const checkWidth = () => setIsWide(window.innerWidth > 1200);
+    const checkWidth = () => setIsWide(window.innerWidth > 768);
     checkWidth(); // run on mount
     window.addEventListener("resize", checkWidth);
     return () => window.removeEventListener("resize", checkWidth);
@@ -47,10 +47,17 @@ function Contribuicao() {
           <Line>
             <LineContent>
               <LineTitle>
-                <span>
-                  PREVISÃO DE <br /> VENDAS DE
-                  <br /> PRODUTOS
-                </span>
+                {isWide ? (
+                  <span>
+                    PREVISÃO DE <br /> VENDAS DE
+                    <br /> PRODUTOS
+                  </span>
+                ) : (
+                  <span>
+                    PREVISÃO DE VENDAS
+                    <br /> DE PRODUTOS
+                  </span>
+                )}
               </LineTitle>
               <Number>
                 <span class="reais">R$</span>
@@ -66,20 +73,20 @@ function Contribuicao() {
               <LineContent>
                 <LineTitle>
                   <span>
-                    NECESSIDADE <br />
-                    MÍNIMA DE <br />
-                    ARRECADAÇÃO
+                    NECESSIDADE MÍNIMA <br />
+                    DE ARRECADAÇÃO
                   </span>
                 </LineTitle>
-                <Number className="vert">
-                  <span class="percentage25">25%</span>
+                <Number>
+                  <span class="percentage">25%</span>
                 </Number>
               </LineContent>
               <LineRect />
               <LineVertManutencao>
                 <LineInfo>
                   <div>
-                    Arrecadações para custos <br /> do espaço e nosso trabalho
+                    Arrecadações para <br />
+                    custos do espaço <br />e nosso trabalho
                   </div>
                 </LineInfo>
               </LineVertManutencao>
@@ -89,22 +96,25 @@ function Contribuicao() {
               <LineContent>
                 <LineTitle>
                   <span>
-                    NECESSIDADE <br />
+                    NECESSIDADE
+                    <br />
                     MÍNIMA DE
-                    <br /> ARRECADAÇÃO
+                    <br />
+                    ARRECADAÇÃO
                   </span>
                 </LineTitle>
-                <Number>
+                <div class="pagaOsCustos">
+                  <Number>
+                    <span class="percentage">25%</span>
+                  </Number>
                   <LineInfo>
                     <span class="arrecadacoes">
-                      De arrecadações
-                      <br /> para pagar os custos <br />
+                      Paga os custos <br />
                       do espaço e do
                       <br /> nosso trabalho
                     </span>
                   </LineInfo>
-                  <span class="percentage25">25%</span>
-                </Number>
+                </div>
               </LineContent>
               <LineRect />
             </Line>
@@ -120,24 +130,24 @@ function Contribuicao() {
                   SUGERIDA
                 </LineTitle>
                 <Number>
-                  <span class="percentage30">30%</span>
+                  <span class="percentage">30%</span>
                 </Number>
               </div>
             ) : (
-              <div>
+              <div class="contribuicaoSugerida">
                 <LineTitle>
-                  <div class="contribuicaoSugerida">
+                  <div>
                     CONTRIBUIÇÃO
                     <br />
                     SUGERIDA
                   </div>
                 </LineTitle>
                 <Number>
-                  <span class="percentage">30%</span>
+                  <span class="percentageDesktop">30%</span>
                 </Number>
+                <LineRect />
               </div>
             )}
-            <LineRect />
             <LineVertManutencao>
               <span class="ouMais">OU MAIS</span>
               <LineInfo>
@@ -147,8 +157,8 @@ function Contribuicao() {
                   investir no projeto)
                 </span>
               </LineInfo>
+              <LineRect />
             </LineVertManutencao>
-            <LineRect />
           </LineVert>
         </ContribuicaoColRight>
       </ContribuicaoContainer>

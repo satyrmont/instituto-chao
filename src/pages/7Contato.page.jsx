@@ -102,7 +102,6 @@ function Contato() {
 }
 
 const ContatoSection = styled(Section)`
-  max-height: 100dvh;
   background-color: var(--color-salmon);
   color: white;
   overflow: hidden;

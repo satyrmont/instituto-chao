@@ -2,12 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-/* @font-face {
-  font-family: 'Grotesk'; 
-  src: url('/fonts/Grotesk-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-} */
 
 @font-face {
   font-family: 'MDNichrome'; 
@@ -35,7 +29,8 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
 
-    --nav-height: clamp(30px, 5dvh, 50px);
+    /* --nav-height: clamp(30px, 5dvh, 50px); */
+    --nav-height: 30px;
     --nav-font-size: clamp(22px, 5dvh, 36px);
 
     --color-gray: #ded6d0;
@@ -50,13 +45,14 @@ const GlobalStyle = createGlobalStyle`
     --contribuicao-titulos-small-screen: clamp(28px, 30px, 50px);
     --contribuicao-titulos-big-screen: clamp(32px, 3dvw, 52px);
     
-    --contribuicao-numeros-small-screen: clamp(30px, 36px, 48px);
-    --contribuicao-numeros-big-screen: clamp(60px, 9dvw, 100px);
+    --contribuicao-numeros-small-screen: clamp(30px, 8dvh, 64px);
+    --contribuicao-numeros-big-screen: clamp(64px, 8dvw, 110px);
     
     --contribuicao-texto-big-screen: clamp(12px, 20px, 24px);
     --contribuicao-texto-small-screen: clamp(12px, 20px, 24px);
     
-    --contribuicao-icon-size: clamp(30px,50px,100px);
+    --contribuicao-icon-size-big: clamp(12px,2.7dvw,45px);
+    --contribuicao-icon-size-small: clamp(20px,6dvw,45px);
     
     --color-yellow: #e5d26a;
     --color-brown: #a58b74;
