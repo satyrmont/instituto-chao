@@ -62,16 +62,16 @@ function Contato() {
               <HorariosLista>
                 <Horario>
                   <span>2ᵃ FEIRA</span>
-                  <span>8 ÀS 14h</span>
+                  <span>8 ÀS 16h</span>
                 </Horario>
                 <Horario>
-                  <span>3ᵃ a 6ᵃ FEIRA</span>
-                  <span>8 ÀS 19h</span>
+                  <span>3ᵃ a DOM</span>
+                  <span>8 ÀS 17:30h</span>
                 </Horario>
-                <Horario>
+                {/* <Horario>
                   <span>SÁB. E DOM.</span>
                   <span>8 ÀS 17h</span>
-                </Horario>
+                </Horario> */}
               </HorariosLista>
             </HorariosLeft>
             <HorariosRight>
